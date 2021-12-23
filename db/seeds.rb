@@ -25,8 +25,10 @@ puts "Creating ratings..."
 # * and a rating belongs to an user.                              *
 # *****************************************************************
 # Create Ratings Here
-
-
+10.times do
+    Rating.create(score: rand(1..10), reason: Faker::Emotion.noun, recommended_price: rand(1..100),
+    dish_id: Dish.all.sample.id, user_id: User.all.sample.id)
+end
 
 
 puts "🌱 Seeding done! 🌱
